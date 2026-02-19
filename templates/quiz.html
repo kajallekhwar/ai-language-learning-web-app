@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card glass-card p-4">
+  <h3>Quiz: {{chapter.title}}</h3>
+
+  <form method="POST" action="/submit_quiz/{{lang}}/{{chapter.id}}">
+    {% for q in questions %}
+      <div class="mb-3">
+        <label class="form-label"><strong>{{q.q}}</strong></label>
+        <input name="{{q.id}}" class="form-control" required>
+      </div>
+    {% endfor %}
+    <button class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

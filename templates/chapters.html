@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="glass-card p-4">
+  <h2 class="fw-bold">Chapters</h2>
+
+  <ul class="list-group mt-3">
+    {% for c in chapters %}
+      <li class="list-group-item" style="color:#000">
+        {{ c.level }} → {{ c.title }}
+
+        {% if c.id <= unlocked %}
+          <a href="/chapter/{{ lang }}/{{ c.id }}" class="btn neon-btn float-end">
+            Open
+          </a>
+        {% else %}
+          <span class="btn neon-red float-end locked">Locked</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

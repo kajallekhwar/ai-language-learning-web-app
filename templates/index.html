@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-6">
+    <div class="card glass-card p-4">
+      <h2 class="fw-bold">Welcome to AI Language Learning</h2>
+      <p>Learn languages from Beginner → Advanced with interactive practice, speech help and quizzes.</p>
+      <hr>
+      <form method="POST" action="/select_course">
+        <div class="mb-3">
+          <label class="form-label">Your Name</label>
+          <input name="name" class="form-control" placeholder="Type your name" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Choose Language</label>
+          <select name="language" class="form-select">
+    {% for lang in courses %}
+        <option value="{{ lang }}" style="color:black;">
+            {{ courses[lang].title }}
+        </option>
+    {% endfor %}
+</select>
+
+        </div>
+        <button class="btn neon-btn">Start Course</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card glass-card p-4">
+      <h4>Why AI?</h4>
+      <ul>
+        <li>AI helps check pronunciation and give instant feedback</li>
+        <li>Adaptive progress: chapters unlock only after passing tests</li>
+        <li>Translate & practice using built-in TTS/STT</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

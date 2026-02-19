@@ -1,0 +1,27 @@
+/* background */
+body { margin:0; font-family: Inter, system-ui, Arial; background: linear-gradient(135deg,#6a11cb,#2575fc); min-height:100vh; color:#fff; }
+.container { padding-top:30px; padding-bottom:40px; }
+
+/* glass nav */
+.glass-nav { background: rgba(0,0,0,0.18) !important; backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+/* glass card */
+.glass-card { background: rgba(255,255,255,0.08); border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); color: #fff; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+.card { background: transparent; border: none; }
+
+/* inputs look */
+input.form-control, textarea.form-control, select.form-select { background: rgba(255,255,255,0.06); color:#fff; border: 1px solid rgba(255,255,255,0.06); }
+input::placeholder, textarea::placeholder { color: #dcdcdc; opacity: 0.8; }
+
+/* output and buttons */
+.neon-btn { background: #00e676; color: #062; border-radius: 30px; box-shadow: 0 6px 18px rgba(0,230,118,0.18); }
+.neon-red { background: #ff5252; color: #fff; border-radius: 30px; box-shadow: 0 6px 18px rgba(255,82,82,0.16); }
+
+.locked { opacity: 0.6; filter: grayscale(0.2); background: rgba(0,0,0,0.12); }
+
+.btn { margin-right: 6px; }
+
+/* small screens */
+@media (max-width: 768px) {
+  .container { padding: 15px; }
+}

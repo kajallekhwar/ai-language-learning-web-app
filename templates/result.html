@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card glass-card p-4 text-center">
+
+  <h2>Your Score: {{score}}%</h2>
+
+  {% if score >= 60 %}
+    <h4 class="text-success">🎉 Passed!</h4>
+    <a class="btn btn-primary" href="/chapter/{{lang}}/{{chapter_id + 1}}">Next Chapter</a>
+  {% else %}
+    <h4 class="text-danger">Try Again</h4>
+    <a class="btn btn-warning" href="/quiz/{{lang}}/{{chapter_id}}">Retry Quiz</a>
+  {% endif %}
+
+  <div class="mt-3">
+    <a class="btn btn-secondary" href="/chapters/{{lang}}">Back to Chapters</a>
+  </div>
+</div>
+
+{% endblock %}
